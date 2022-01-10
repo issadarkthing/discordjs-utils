@@ -93,3 +93,8 @@ export function remove<T>(item: T, arr: T[], count = 1) {
 
   return arr;
 }
+
+/** Capitalize string */
+export function cap(str: string) {
+  return str[0].toUpperCase() + str.slice(1);
+}
