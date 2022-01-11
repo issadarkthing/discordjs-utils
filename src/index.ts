@@ -99,14 +99,13 @@ export function cap(str: string) {
   return str[0].toUpperCase() + str.slice(1);
 }
 
+class Time {
+  SECOND = 1000;
+  MINUTE = 60 * this.SECOND;
+  HOUR = 60 * this.MINUTE;
+  DAY = 24 * this.HOUR;
+  WEEK = 7 * this.DAY;
+}
 
 /** Time in milliseconds */
-export const time: { [key: string]: number } = {
-  YEAR: 12 * 30 * 24 * 60 * 60 * 1000,
-  MONTH: 30 * 24 * 60 * 60 * 1000,
-  WEEK: 7 * 24 * 60 * 60 * 1000,
-  DAY: 24 * 60 * 60 * 1000,
-  HOUR: 60 * 60 * 1000,
-  MINUTE: 60 * 1000,
-  SECOND: 1000,
-}
+export const time = new Time();
