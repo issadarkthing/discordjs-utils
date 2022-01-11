@@ -98,3 +98,15 @@ export function remove<T>(item: T, arr: T[], count = 1) {
 export function cap(str: string) {
   return str[0].toUpperCase() + str.slice(1);
 }
+
+
+/** Time in milliseconds */
+export const time: { [key: string]: number } = {
+  YEAR: 12 * 30 * 24 * 60 * 60 * 1000,
+  MONTH: 30 * 24 * 60 * 60 * 1000,
+  WEEK: 7 * 24 * 60 * 60 * 1000,
+  DAY: 24 * 60 * 60 * 1000,
+  HOUR: 60 * 60 * 1000,
+  MINUTE: 60 * 1000,
+  SECOND: 1000,
+}
