@@ -1,6 +1,6 @@
 {
   "name": "@jiman24/discordjs-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "helper utility package",
   "main": "dist/index.js",
   "scripts": {
