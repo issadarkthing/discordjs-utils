@@ -71,6 +71,32 @@ export function sleep(time: number) {
   })
 }
 
+
+export function removeByKey<
+  T, 
+  K extends keyof T, 
+  V extends T[K],
+  >(arr: T[], key: K, value: V, count = 1) {
+  const result = [] as T[];
+  let deletedCount = 0;
+
+  for (const item of arr) {
+
+    if (item[key] === value && deletedCount < count) {
+      deletedCount++;
+      continue
+    }
+
+    result.push(item);
+  }
+
+  return result;
+}
+
+export function removeById<T extends { id: string }>(arr: T[], value: string, count = 1) {
+  return removeByKey(arr, "id", value, count);
+}
+
 function remove1<T>(item: T, arr: T[]) {
   const copy = [...arr];
   const index = copy.findIndex(x => x === item);
