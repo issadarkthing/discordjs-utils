@@ -135,3 +135,32 @@ class Time {
 
 /** Time in milliseconds */
 export const time = new Time();
+
+
+/** 
+ * Aggregates item by key and count. It returns an object of 
+ * { value: Value, key: Key } 
+ * */
+export function aggregateByKey<T, K extends keyof T>(items: T[], key: K) {
+
+  const records = new Map<T[K], { count: number, value: T }>();
+
+  for (const item of items) {
+
+    const id = item[key];
+    const record = records.get(id);
+
+    if (record) {
+      record.count++;
+    } else {
+      records.set(id, { count: 1, value: item });
+    }
+
+  }
+
+  return records;
+}
+
+export function aggregateById<T extends { id: string }>(items: T[]) {
+  return aggregateByKey(items, "id");
+}
