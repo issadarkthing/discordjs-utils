@@ -21,14 +21,25 @@ export function formatFloat(num: number) {
   return num.toFixed(1);
 }
 
-/** Formats number into percentage */
+/** 
+ * Formats number into percentage
+ * @example formatPercent(0.253111) // "25.31%"
+ * */
 export function formatPercent(num: number) {
   return `${(num * 100).toFixed(2)}%`
 }
 
 class InvalidNumber extends Error {}
 
-/** Validates passed number is a valid number and not NaN */
+/** 
+ * Validates passed number is a valid number and not NaN
+ * ```ts
+ * validateNumber(null) // throws an error
+ * validateNumber(NaN) // throws an error
+ * validateNumber("10") // throws an error
+ * validateNumber(10.3) // nothing
+ * ```
+ * */
 export function validateNumber(amount: number) {
   if (Number.isNaN(amount)) {
     throw new InvalidNumber("not a valid number");
@@ -66,7 +77,19 @@ export function sleep(time: number) {
 }
 
 
-/** Removes item from array using key */
+/** 
+ * Removes item from array using key
+ * ```ts
+ * const items = [
+ *  { id: "weapon" }, 
+ *  { id: "weapon" }, 
+ *  { id: "potion" },
+ * ];
+ *
+ * const updatedItems = removeByKey(items, "id", "weapon");
+ * console.log(updatedItems) // [{ id: "weapon" }, { id: "potion" }]
+ * ```
+ * */
 export function removeByKey<
   T, 
   K extends keyof T, 
@@ -88,7 +111,19 @@ export function removeByKey<
   return result;
 }
 
-/** Removes item from array using "id" as key */
+/** 
+ * Removes item from array using "id" as key 
+ * ```ts
+ * const items = [
+ *  { id: "weapon" }, 
+ *  { id: "weapon" }, 
+ *  { id: "potion" },
+ * ];
+ *
+ * const updatedItems = removeById(items, "weapon");
+ * console.log(updatedItems) // [{ id: "weapon" }, { id: "potion" }]
+ * ```
+ * */
 export function removeById<T extends { id: string }>(arr: T[], value: string, count = 1) {
   return removeByKey(arr, "id", value, count);
 }
@@ -106,7 +141,8 @@ function remove1<T>(item: T, arr: T[]) {
 
 /** 
  * Removes N number of items from an array. Returns new array, passed array
- * remains unchanged.
+ * remains unchanged. This compares item using `===` equality. You should only
+ * use this when items are primitives.
  * */
 export function remove<T>(item: T, arr: T[], count = 1) {
   for (let i = 0; i < count; i++) {
@@ -136,7 +172,7 @@ export const time = new Time();
 
 /** 
  * Aggregates item by key and count. It returns an object of 
- * { value: Value, key: Key } 
+ * `{ value: Value, key: Key }`
  * */
 export function aggregateByKey<T, K extends keyof T>(items: T[], key: K) {
 
@@ -168,13 +204,18 @@ export function aggregateById<T extends { id: string }>(items: T[]) {
 
 /** 
  * Converts number into short representation
- * @example 12_494 # 12.5k
+ * ```ts
+ * compact(12_494) // "12.5k"
+ * ```
  * */
 export const compact = (num: number) =>
   Intl.NumberFormat("en", { notation: "compact" }).format(num);
 
 /** 
  * Creates progressbar using string
+ * ```ts
+ * progressBar(10, 20, 10) // "█████░░░░░ [10/20]"
+ * ```
  * */
 export function progressBar(
   progress: number,
@@ -197,6 +238,11 @@ export function progressBar(
 
 /** 
  * Clamps number between min and max numbers
+ * ```ts
+ * clamp(10, 20, 15) // 15
+ * clamp(10, 20, 35) // 20
+ * clamp(10, 20, 5) // 10
+ * ```
  * */
 export function clamp(min: number, max: number, value: number) {
   if (value < min) {
