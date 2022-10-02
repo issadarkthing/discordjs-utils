@@ -127,6 +127,7 @@ export function cap(str: string) {
   return str[0].toUpperCase() + str.slice(1);
 }
 
+/** Represents time */
 class Time {
   SECOND = 1000;
   MINUTE = 60 * this.SECOND;
