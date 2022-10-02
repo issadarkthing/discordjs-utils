@@ -72,6 +72,7 @@ export function sleep(time: number) {
 }
 
 
+/** Removes item from array using key */
 export function removeByKey<
   T, 
   K extends keyof T, 
@@ -93,6 +94,7 @@ export function removeByKey<
   return result;
 }
 
+/** Removes item from array using "id" as key */
 export function removeById<T extends { id: string }>(arr: T[], value: string, count = 1) {
   return removeByKey(arr, "id", value, count);
 }
@@ -161,6 +163,52 @@ export function aggregateByKey<T, K extends keyof T>(items: T[], key: K) {
   return records;
 }
 
+/** 
+ * Aggregates items by id: string
+ * */
 export function aggregateById<T extends { id: string }>(items: T[]) {
   return aggregateByKey(items, "id");
+}
+
+
+/** 
+ * Converts number into short representation
+ * @example 12_494 # 12.5k
+ * */
+export const compact = (num: number) =>
+  Intl.NumberFormat("en", { notation: "compact" }).format(num);
+
+/** 
+ * Creates progressbar using string
+ * */
+export function progressBar(
+  progress: number,
+  maxProgress: number,
+  length = 20
+) {
+  if (progress < 0) progress = 0;
+
+  const fill = "█";
+  const path = "░";
+  const fillProgress = Math.round((progress * length) / maxProgress);
+
+  const bar = Array(length)
+    .fill(fill)
+    .map((v, i) => (fillProgress > i ? v : path))
+    .join("");
+
+  return `${bar} \`[${compact(progress)}/${compact(maxProgress)}]\``;
+}
+
+/** 
+ * Clamps number between min and max numbers
+ * */
+export function clamp(min: number, max: number, value: number) {
+  if (value < min) {
+    return min;
+  } else if (value > max) {
+    return max;
+  } else {
+    return value;
+  }
 }
