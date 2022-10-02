@@ -1,11 +1,5 @@
 import { MersenneTwister19937, Random } from "random-js"
 
-export const BLUE_BUTTON = "🔵";
-export const WHITE_BUTTON = "⚪";
-export const RED_BUTTON = "🔴";
-export const BLACK_BUTTON = "⚫";
-
-
 /** Formats an array of string into a list with specified index (default to 1) */
 export function toNList(items: string[], start = 1) {
   if (items.length < 0) return "none";
