@@ -253,3 +253,22 @@ export function clamp(min: number, max: number, value: number) {
     return value;
   }
 }
+
+
+/** 
+ * Chunk array into N-subarrays
+ * ```ts
+ *chunk([1, 2, 3, 4], 2) // [[1, 2], [3, 4]]
+ *chunk([1, 2, 3, 4, 5], 2) // [[1, 2], [3, 4], [5]]
+ * ```
+ * */
+export function chunk<T>(items: T[], count: number) {
+  const result: T[][] = [];
+
+  for (let i = 0; i < (items.length / count); i++) {
+    const bit = items.slice(i*count, i*count + count);
+    result.push(bit);
+  }
+
+  return result;
+}
