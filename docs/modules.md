@@ -22,6 +22,7 @@
 - [formatFloat](modules.md#formatfloat)
 - [formatPercent](modules.md#formatpercent)
 - [progressBar](modules.md#progressbar)
+- [range](modules.md#range)
 - [remove](modules.md#remove)
 - [removeById](modules.md#removebyid)
 - [removeByKey](modules.md#removebykey)
@@ -41,7 +42,7 @@ Random functions helpers
 
 #### Defined in
 
-[index.ts:70](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L70)
+[index.ts:70](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L70)
 
 ___
 
@@ -53,7 +54,7 @@ Time in milliseconds
 
 #### Defined in
 
-[index.ts:170](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L170)
+[index.ts:170](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L170)
 
 ## Functions
 
@@ -81,7 +82,7 @@ Aggregates items by id: string
 
 #### Defined in
 
-[index.ts:200](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L200)
+[index.ts:200](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L200)
 
 ___
 
@@ -112,7 +113,7 @@ Aggregates item by key and count. It returns an object of
 
 #### Defined in
 
-[index.ts:177](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L177)
+[index.ts:177](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L177)
 
 ___
 
@@ -134,7 +135,7 @@ Formats argument into discord's bold formatting
 
 #### Defined in
 
-[index.ts:10](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L10)
+[index.ts:10](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L10)
 
 ___
 
@@ -156,7 +157,7 @@ Capitalize string
 
 #### Defined in
 
-[index.ts:156](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L156)
+[index.ts:156](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L156)
 
 ___
 
@@ -189,7 +190,7 @@ chunk([1, 2, 3, 4, 5], 2) // [[1, 2], [3, 4], [5]]
 
 #### Defined in
 
-[index.ts:265](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L265)
+[index.ts:265](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L265)
 
 ___
 
@@ -218,7 +219,7 @@ clamp(10, 20, 5) // 10
 
 #### Defined in
 
-[index.ts:247](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L247)
+[index.ts:247](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L247)
 
 ___
 
@@ -240,7 +241,7 @@ Formats argument into discord's inline code formatting
 
 #### Defined in
 
-[index.ts:15](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L15)
+[index.ts:15](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L15)
 
 ___
 
@@ -265,7 +266,7 @@ compact(12_494) // "12.5k"
 
 #### Defined in
 
-[index.ts:211](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L211)
+[index.ts:211](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L211)
 
 ___
 
@@ -287,7 +288,7 @@ Formates number into .1 precision float
 
 #### Defined in
 
-[index.ts:20](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L20)
+[index.ts:20](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L20)
 
 ___
 
@@ -315,7 +316,7 @@ formatPercent(0.253111) // "25.31%"
 
 #### Defined in
 
-[index.ts:28](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L28)
+[index.ts:28](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L28)
 
 ___
 
@@ -342,7 +343,31 @@ progressBar(10, 20, 10) // "█████░░░░░ [10/20]"
 
 #### Defined in
 
-[index.ts:220](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L220)
+[index.ts:220](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L220)
+
+___
+
+### range
+
+▸ **range**(`min`, `max`, `step?`): `Generator`<`number`, `void`, `unknown`\>
+
+Creates an iterable. Min and max are both inclusive.
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `min` | `number` | `undefined` |
+| `max` | `number` | `undefined` |
+| `step` | `number` | `1` |
+
+#### Returns
+
+`Generator`<`number`, `void`, `unknown`\>
+
+#### Defined in
+
+[index.ts:280](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L280)
 
 ___
 
@@ -374,7 +399,7 @@ use this when items are primitives.
 
 #### Defined in
 
-[index.ts:147](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L147)
+[index.ts:147](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L147)
 
 ___
 
@@ -414,7 +439,7 @@ console.log(updatedItems) // [{ id: "weapon" }, { id: "potion" }]
 
 #### Defined in
 
-[index.ts:127](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L127)
+[index.ts:127](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L127)
 
 ___
 
@@ -457,7 +482,7 @@ console.log(updatedItems) // [{ id: "weapon" }, { id: "potion" }]
 
 #### Defined in
 
-[index.ts:93](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L93)
+[index.ts:93](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L93)
 
 ___
 
@@ -479,7 +504,7 @@ Async sleep for N milliseconds
 
 #### Defined in
 
-[index.ts:73](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L73)
+[index.ts:73](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L73)
 
 ___
 
@@ -502,7 +527,7 @@ Formats an array of string into a list with specified index (default to 1)
 
 #### Defined in
 
-[index.ts:4](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L4)
+[index.ts:4](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L4)
 
 ___
 
@@ -525,7 +550,7 @@ Validates the number passed is not zero and does not exceed balance
 
 #### Defined in
 
-[index.ts:53](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L53)
+[index.ts:53](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L53)
 
 ___
 
@@ -554,7 +579,7 @@ Validates the number passed is a valid index in an array
 
 #### Defined in
 
-[index.ts:64](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L64)
+[index.ts:64](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L64)
 
 ___
 
@@ -582,4 +607,4 @@ validateNumber(10.3) // nothing
 
 #### Defined in
 
-[index.ts:43](https://github.com/issadarkthing/discordjs-utils/blob/1799bb1/src/index.ts#L43)
+[index.ts:43](https://github.com/issadarkthing/discordjs-utils/blob/9912861/src/index.ts#L43)
