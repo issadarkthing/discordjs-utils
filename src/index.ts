@@ -272,3 +272,13 @@ export function chunk<T>(items: T[], count: number) {
 
   return result;
 }
+
+
+/** 
+ * Creates an iterable. Min and max are both inclusive.
+ * */
+export function* range(min: number, max: number, step = 1) {
+  for (let i = min; i <= max; i += step) {
+    yield i;
+  }
+}
